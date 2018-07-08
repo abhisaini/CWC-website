@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div id="demo">
+</div>
+<canvas id="myChart" width="400" height="400"></canvas>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"> </script>
+<script>
+var blood={
+"A+":10,"A-":5,"B+":4,"B-":6,"O+":25,"O-":8,"AB+":7,"AB-":5
+}
+var label=[];
+var data=[];
+for (key in blood){
+//console.log(blood[key]);
+label.push(key);
+data.push(blood[key]);
+}
+console.log(label,data);
+var final_data = {
+  
+        datasets: [{
+            label: 'Blood Groups',
+         	data: data,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(175, 200, 25, 0.2)',
+                'rgba(85, 162, 200, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(175, 200, 25, 1)',
+                'rgba(85, 162, 200, 1)'
+            ],
+            borderWidth: 1
+        }],
+    
+    labels: label
+};
+console.log(final_data);
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: final_data,
+});
+</script>
+</html>
+
