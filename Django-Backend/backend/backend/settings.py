@@ -25,7 +25,7 @@ SECRET_KEY = 'l_^6&al$a7(z*yz8^cx=r^nuti(dldivlua*o^l)%at72fm7f9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["cwc.serveo.net", "localhost"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cwc',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
