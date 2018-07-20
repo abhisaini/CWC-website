@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form action="http://localhost:9000/api/login" method="GET" id="myForm" enctype='application/json'>
+      <input name="id" type="text" ><br>
+      <input name="pass" type="password"><br>
+      <input name="submit" type="submit" value="login">
+    </form>
+      <p id="demo" > </p> <br>
+      <button onclick="loadXMLDoc()"> send </button> <br>
+      <a href="http://localhost:9000/api/session"> session </a>
+  </body>
+  <script>
+//     var request = require('request');
+    var data = {
+        "id" : "abhi",
+        "pass" : "hi"
+    };
+    function loadXMLDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "http://localhost:9000/api/login");
+//         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhttp.send(JSON.stringify(data));
+        console.log(JSON.stringify(data));
+        var response = xhttp.responseText;
+        console.log(response);
+    }
+  </script>
+</html>
